@@ -4,15 +4,15 @@ plugins {
 }
 
 android {
-    namespace = "com.montway.start"
-    compileSdk = 34
+    namespace = Configs.NAMESPACE
+    compileSdk = Configs.COMPILE_SDK
 
     defaultConfig {
-        applicationId = "com.montway.start"
-        minSdk = 28
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = Configs.APPLICATION_ID
+        minSdk = Configs.MIN_SDK
+        targetSdk = Configs.TARGET_SDK
+        versionCode = Configs.VERSION_CODE
+        versionName = Configs.VERSION_NAME
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -30,11 +30,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = Configs.SOURCE_COMPATIBILITY
+        targetCompatibility = Configs.TARGET_COMPATIBILITY
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = Configs.JVM_TARGET
     }
     buildFeatures {
         compose = true
@@ -51,7 +51,9 @@ android {
 
 dependencies {
 
-    implementation(libs.androidx.core.ktx)
+    implementation(Dependencies.KTX)
+    implementation(Dependencies.APP_COMPAT)
+
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
