@@ -1,8 +1,7 @@
 package com.montway.start.framework.di
 
 import android.content.Context
-import androidx.room.Room
-import com.montway.start.framework.db.NoteDatabase
+import android.content.res.Resources
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,15 +11,11 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object DatabaseModule {
+object AppModule {
 
     @Provides
     @Singleton
-    fun providesNoteDatabase(@ApplicationContext context: Context) =
-        Room.databaseBuilder(context, NoteDatabase::class.java, "montwayNote")
-            .build()
+    fun providesResources(@ApplicationContext context: Context): Resources = context.resources
 
-    @Provides
-    fun providesTodoDao(database: NoteDatabase) = database.todoDao()
 
 }

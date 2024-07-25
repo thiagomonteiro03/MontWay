@@ -1,4 +1,4 @@
-package com.montway.start.ui.theme
+package com.montway.start.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 
