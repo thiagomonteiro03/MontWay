@@ -2,17 +2,17 @@ package com.montway.start.framework.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.montway.start.framework.db.dao.TodoDao
-import com.montway.start.framework.db.model.TodoEntity
+import com.montway.start.framework.db.dao.NoteDao
+import com.montway.start.framework.db.model.NoteEntity
 
 @Database(
     entities = [
-        TodoEntity::class
+        NoteEntity::class
     ],
     version = 1
 )
 abstract class NoteDatabase: RoomDatabase() {
 
-    abstract fun todoDao(): TodoDao
+    abstract fun noteDao(): NoteDao
 
 }

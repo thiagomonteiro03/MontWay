@@ -1,6 +1,7 @@
 package com.montway.start.presentation.ui
 
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -46,6 +47,8 @@ fun MainScreen(){
             items(cardList) { item ->
                 SampleCard(title = item)
             }
+
+            item { Spacer(modifier = Modifier.height(100.dp)) }
         }
     }
 }
@@ -61,7 +64,9 @@ private fun SampleCard(
             .padding(8.dp)
     ) {
         Box(
-            Modifier.padding(8.dp).fillMaxSize(),
+            Modifier
+                .padding(8.dp)
+                .fillMaxSize(),
             contentAlignment = Alignment.Center
         ) {
             Text(

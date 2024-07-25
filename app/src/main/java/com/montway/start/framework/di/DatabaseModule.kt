@@ -21,6 +21,6 @@ object DatabaseModule {
             .build()
 
     @Provides
-    fun providesTodoDao(database: NoteDatabase) = database.todoDao()
+    fun providesNoteDao(database: NoteDatabase) = database.noteDao()
 
 }
